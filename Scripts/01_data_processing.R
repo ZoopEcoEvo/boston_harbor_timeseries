@@ -21,16 +21,4 @@ df_combined %>%
 # Optionally, save the combined data to a new CSV file
 # write_csv(df_combined, "path/to/save/combined_data.csv")
 
-#### Combining CTmax data ####
-
-# 1. Define the path to your CSV files
-files_path = "Raw_data/ctmax_data/"
-
-# 2. List all CSV files in the directory
-csv_files <- list.files(path = files_path, pattern = "*.csv", full.names = TRUE)
-
-# 3. Read and combine all CSVs into one data frame
-ctmax_data <- readr::read_csv(csv_files) %>% drop_na(species)
-
-write.csv(ctmax_data, file = "Output/Output_data/ctmax_data.csv", row.names = F)
 
