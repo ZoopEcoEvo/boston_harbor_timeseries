@@ -19,6 +19,12 @@ if(process_data == T){
 ### Read in the PROCESSED data ###
 ##################################
 
+bharb_temps = read.csv(file = "Output/Output_data/boston_harbor_temps.csv")
+ctmax_data = read.csv(file = "Output/Output_data/ctmax_data.csv") %>% tibble() %>% 
+  mutate(species = fct_reorder(species, ctmax, mean, .desc = T),
+         collection_datetime = as_datetime(collection_datetime),
+         experiment_datetime = as_datetime(experiment_datetime)) 
+
 if(make_report == T){
   render(input = "Output/Reports/report.Rmd", #Input the path to your .Rmd file here
          #output_file = "report", #Name your file here if you want it to have a different name; leave off the .html, .md, etc. - it will add the correct one automatically

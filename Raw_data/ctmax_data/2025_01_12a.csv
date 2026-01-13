@@ -1,0 +1,13 @@
+data_sheet,collection_datetime,experiment_datetime,collection_temp,collection_salinity,lab_temp,ramp_start_temp,water_bath,thermometer,tube,species,sex,ctmax,size,fecundity
+1,2025-01-12 11:00:00,2025-01-12 13:00:00,,,3,3,1,5,1,Centropages hamatus,f,24.5,,NA
+1,2025-01-12 11:00:00,2025-01-12 13:00:00,,,3,3,1,5,2,Centropages typicus,m,26.9,,NA
+1,2025-01-12 11:00:00,2025-01-12 13:00:00,,,3,3,1,5,3,Pseudocalanus sp.,f,21.9,,16
+1,2025-01-12 11:00:00,2025-01-12 13:00:00,,,3,3,1,5,4,Calanus finmarchicus,m,22.1,,NA
+1,2025-01-12 11:00:00,2025-01-12 13:00:00,,,3,3,1,5,5,Calanus finmarchicus,f,20.9,,NA
+1,2025-01-12 11:00:00,2025-01-12 13:00:00,,,3,3,1,5,6,Tortanus discaudatus,m,26.8,,NA
+1,2025-01-12 11:00:00,2025-01-12 13:00:00,,,3,3,1,5,7,Calanus finmarchicus,f,23.5,,NA
+1,2025-01-12 11:00:00,2025-01-12 13:00:00,,,3,3,1,5,8,Pseudocalanus sp.,f,21.9,,23
+1,2025-01-12 11:00:00,2025-01-12 13:00:00,,,3,3,1,5,9,Acartia hudsonica,f,25.1,,NA
+1,2025-01-12 11:00:00,2025-01-12 13:00:00,,,3,3,1,5,10,Centropages hamatus,f,26.4,,NA
+1,2025-01-12 11:00:00,2025-01-12 13:00:00,,,3,3,1,5,11,NA,NA,NA,NA,NA
+1,2025-01-12 11:00:00,2025-01-12 13:00:00,,,3,3,1,5,12,Pseudocalanus sp.,f,22.9,,NA
