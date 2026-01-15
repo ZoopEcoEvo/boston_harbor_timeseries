@@ -22,7 +22,8 @@ if(process_data == T){
 bharb_temps = read.csv(file = "Output/Output_data/boston_harbor_temps.csv")
 trait_data = readr::read_csv(list.files(path = "Raw_data/trait_data/", 
                                         pattern = "*.csv", 
-                                        full.names = TRUE)) %>% 
+                                        full.names = TRUE),
+                             show_col_types = FALSE) %>% 
   drop_na(species) %>% 
   mutate(species = fct_reorder(species, ctmax, mean, .desc = T),
          collection_datetime = as_datetime(collection_datetime),

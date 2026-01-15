@@ -120,8 +120,9 @@ bharb_temps %>%
 
 ```{r}
 
-ctmax_data %>% 
-  ggplot(aes(x = collection_datetime, y = ctmax, colour = species)) + 
+trait_data %>% 
+  mutate(date = as_date(collection_datetime)) %>% 
+  ggplot(aes(x = date, y = ctmax, colour = species)) + 
   geom_point(position = position_dodge(width = 0.1)) + 
   theme_matt() + 
   theme(legend.position = "right")
@@ -130,17 +131,18 @@ ctmax_data %>%
 
 ```{r}
 
-ctmax_data %>% 
+trait_data %>% 
 ggplot(aes(x = species, y = ctmax)) + 
   geom_boxplot() + 
   geom_point() + 
-  theme_matt_facets()
+  theme_matt_facets() + 
+  theme(axis.text.x = element_text(angle = 300, hjust = 0, vjust = 0.5))
 
 ```
 
 ```{r}
 
-ctmax_data %>% 
+trait_data %>% 
   group_by(species, sex) %>% 
   summarise(mean_ctmax = mean(ctmax, na.rm = T), 
             ctmax_se = sd(ctmax) / sqrt(n())) %>% 
