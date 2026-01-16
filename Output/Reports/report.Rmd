@@ -131,10 +131,14 @@ trait_data %>%
 
 ```{r}
 
+sample_sizes = trait_data %>% 
+  count(species)
+
 trait_data %>% 
 ggplot(aes(x = species, y = ctmax)) + 
   geom_boxplot() + 
   geom_point() + 
+  geom_text(data = sample_sizes, aes(y = min(trait_data$ctmax) - 1, label = n)) + 
   theme_matt_facets() + 
   theme(axis.text.x = element_text(angle = 300, hjust = 0, vjust = 0.5))
 
@@ -154,5 +158,47 @@ ggplot(aes(x = sex, y = mean_ctmax, group = species)) +
   geom_point(size = 2) + 
   theme_matt_facets()
 
+```
+
+```{r}
+trait_data %>% 
+  ggplot(aes(x = hours_in_lab, y = ctmax, group = collection_datetime)) + 
+  facet_wrap(species~.) + 
+  geom_point() + 
+  geom_smooth(method = "lm",
+              se = F) + 
+  theme_matt_facets()
+
+```
+
+```{r}
+
+size_sample_sizes = trait_data %>% 
+  drop_na(size) %>% 
+  count(species)
+
+trait_data %>% 
+  drop_na(size) %>% 
+  mutate(species = fct_reorder(species, size, median, .desc = T)) %>% 
+ggplot(aes(x = species, y = size)) + 
+  geom_boxplot() + 
+  geom_point() + 
+  geom_text(data = size_sample_sizes, aes(y = min(trait_data$size, na.rm = T) - 0.1, label = n)) + 
+  theme_matt_facets() + 
+  theme(axis.text.x = element_text(angle = 300, hjust = 0, vjust = 0.5))
+```
+
+```{r}
+trait_data %>% 
+  group_by(species, sex) %>% 
+  summarise(mean_size = mean(size, na.rm = T), 
+            size_se = sd(size) / sqrt(n())) %>% 
+ggplot(aes(x = sex, y = mean_size, group = species)) + 
+  facet_wrap(species~.) + 
+  geom_line(linewidth = 1) + 
+  geom_errorbar(aes(ymin = mean_size - size_se, ymax = mean_size + size_se),
+                width = 0.2, linewidth = 1) + 
+  geom_point(size = 2) + 
+  theme_matt_facets()
 ```
 

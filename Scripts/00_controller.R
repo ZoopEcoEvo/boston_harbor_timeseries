@@ -25,9 +25,10 @@ trait_data = readr::read_csv(list.files(path = "Raw_data/trait_data/",
                                         full.names = TRUE),
                              show_col_types = FALSE) %>% 
   drop_na(species) %>% 
-  mutate(species = fct_reorder(species, ctmax, mean, .desc = T),
+  mutate(species = fct_reorder(species, ctmax, median, .desc = T),
          collection_datetime = as_datetime(collection_datetime),
-         experiment_datetime = as_datetime(experiment_datetime)) 
+         experiment_datetime = as_datetime(experiment_datetime),
+         hours_in_lab = as.numeric(experiment_datetime - collection_datetime))
 
 if(make_report == T){
   render(input = "Output/Reports/report.Rmd", #Input the path to your .Rmd file here
