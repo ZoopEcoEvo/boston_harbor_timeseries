@@ -1,5 +1,5 @@
 ---
-title: TITLE HERE
+title: "SCoPE: Seasonality in Copepod Physiology and Ecology"
 date: "`r Sys.Date()`"
 output: 
   html_document:
@@ -86,7 +86,6 @@ theme_matt_facets = function(base_size = 18,
 ## Boston Harbor Seasonality 
 
 ```{r}
-
 bharb_temps %>% 
   mutate(month = lubridate::month(date),
          year = lubridate::year(date)) %>% 
@@ -98,7 +97,10 @@ bharb_temps %>%
        y = "Mean Temp. (°C)") + 
   theme_matt() + 
   theme(legend.position = "right")
+```
 
+
+```{r}
 bharb_temps %>% 
   mutate(month = lubridate::month(date),
          year = lubridate::year(date)) %>% 
@@ -192,7 +194,7 @@ ggplot(aes(x = species, y = size)) +
 trait_data %>% 
   group_by(species, sex) %>% 
   summarise(mean_size = mean(size, na.rm = T), 
-            size_se = sd(size) / sqrt(n())) %>% 
+            size_se = sd(size, na.rm = T) / sqrt(n())) %>% 
 ggplot(aes(x = sex, y = mean_size, group = species)) + 
   facet_wrap(species~.) + 
   geom_line(linewidth = 1) + 
@@ -200,5 +202,29 @@ ggplot(aes(x = sex, y = mean_size, group = species)) +
                 width = 0.2, linewidth = 1) + 
   geom_point(size = 2) + 
   theme_matt_facets()
+```
+
+```{r}
+
+high_abund = trait_data %>% 
+  count(species, sex) %>% 
+  filter(n > 3)
+
+trait_data %>% 
+  filter(sex != "j", species %in% unique(high_abund$species)) %>% 
+ggplot(aes(x = size, y = ctmax, colour = sex)) + 
+  facet_wrap(species~., scales = "free") + 
+  geom_point() + 
+  geom_smooth(method = "lm")
+
+```
+
+```{r}
+
+pseudocal = trait_data %>% 
+  filter(species == "Pseudocalanus sp.")
+
+ggplot(pseudocal, aes(x = size, y = ctmax)) + 
+  geom_point(size = 4)
 ```
 

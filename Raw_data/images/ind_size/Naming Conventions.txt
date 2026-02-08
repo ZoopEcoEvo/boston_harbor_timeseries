@@ -6,9 +6,9 @@ If more than one experiment was done per day, add letters following the date (ex
 
 All images should be in .jpeg format. The images themselves need to be named in a specific manner as well. 
 
-Scale images with the 4x objective should be named a_scale.jpeg. 
+Scale images with the 10x objective should be named a_scale.jpeg. 
 
-Scale images with the 10x objective should be named b_scale.jpeg. 
+Scale images with the 4x objective should be named b_scale.jpeg. 
 
 Copepod image names should start with either a_ or b_, indicating which scale should be used when calibrating ImageJ.
 
