@@ -12,6 +12,8 @@ knit_manuscript = F #Compiles manuscript draft
 ############################
 
 if(process_data == T){
+  library(respR)
+  
   source(file = "Scripts/01_data_processing.R")
 }
 
@@ -29,6 +31,8 @@ trait_data = readr::read_csv(list.files(path = "Raw_data/trait_data/",
          collection_datetime = as_datetime(collection_datetime),
          experiment_datetime = as_datetime(experiment_datetime),
          hours_in_lab = as.numeric(experiment_datetime - collection_datetime))
+
+tpc_rates = read.csv(file = "Output/Output_data/resp_data.csv")
 
 if(make_report == T){
   render(input = "Output/Reports/report.Rmd", #Input the path to your .Rmd file here
