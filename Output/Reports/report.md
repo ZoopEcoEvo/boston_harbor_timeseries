@@ -1,11 +1,17 @@
 SCoPE: Seasonality in Copepod Physiology and Ecology
 ================
-2026-02-07
+2026-02-18
 
 - [Boston Harbor Seasonality](#boston-harbor-seasonality)
 - [CTmax Data](#ctmax-data)
+- [Body Size](#body-size)
+- [Respiration Rate TPCs](#respiration-rate-tpcs)
 
 ## Boston Harbor Seasonality
+
+Boston Harbor exhibits the typical seasonality expected for a temperate
+coastal system - waters typically drop to \<5°C in the winter and then
+rise to ~20°C during the summers.
 
 ``` r
 bharb_temps %>% 
@@ -22,6 +28,10 @@ bharb_temps %>%
 ```
 
 <img src="../Figures/markdown/unnamed-chunk-1-1.png" style="display: block; margin: auto;" />
+
+Temperatures in both March and August (near the minimum and maximum
+temperatures, respectively) have been rising steadily since at least the
+1960s.
 
 ``` r
 bharb_temps %>% 
@@ -100,6 +110,8 @@ trait_data %>%
 
 <img src="../Figures/markdown/unnamed-chunk-6-1.png" style="display: block; margin: auto;" />
 
+## Body Size
+
 ``` r
 
 size_sample_sizes = trait_data %>% 
@@ -161,3 +173,43 @@ ggplot(pseudocal, aes(x = size, y = ctmax)) +
 ```
 
 <img src="../Figures/markdown/unnamed-chunk-10-1.png" style="display: block; margin: auto;" />
+
+## Respiration Rate TPCs
+
+``` r
+tpc_rates %>%
+  ggplot(aes(x = temp, y = rate, colour = treatment)) +
+  facet_wrap(treatment~., nrow = 2) +
+  geom_hline(yintercept = 0, colour = "grey") + 
+  geom_point() + 
+  geom_smooth(se = F) + 
+  theme_bw()
+```
+
+<img src="../Figures/markdown/unnamed-chunk-11-1.png" style="display: block; margin: auto;" />
+
+When estimating TPCs, we will use just rate estimates with an R^2 of
+greater than 0.7. We will also censor negative respiration rate
+estimates to zero.
+
+``` r
+subset_rates = tpc_rates %>%
+  filter(rsq >0.7) %>%
+  mutate(rate = if_else(rate < 0, 0, rate))
+
+tpc_rates %>%
+  filter(rsq >0.7 & rate < 0.09) %>%
+  mutate(rate = if_else(rate < 0, 0, rate)) %>%
+  group_by(treatment, temp) %>%  
+  summarise(rate = mean(rate)) %>% 
+  ggplot(aes(x = temp, y = rate, colour = treatment)) +
+  facet_wrap(treatment~., nrow = 2) +
+  geom_point(data = subset_rates, aes(x = temp, y = rate), 
+             alpha = 0.3) + 
+  geom_smooth(data = subset_rates, aes(x = temp, y = rate), se = F) + 
+  geom_point(size = 3) + 
+  theme_bw() + 
+  theme(legend.position = "none")
+```
+
+<img src="../Figures/markdown/unnamed-chunk-12-1.png" style="display: block; margin: auto;" />
