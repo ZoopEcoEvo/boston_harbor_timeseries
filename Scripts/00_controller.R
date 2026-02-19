@@ -14,6 +14,8 @@ knit_manuscript = F #Compiles manuscript draft
 if(process_data == T){
   library(respR)
   
+  system("./Scripts/01_convert_resp_files.sh")
+  
   source(file = "Scripts/01_data_processing.R")
 }
 

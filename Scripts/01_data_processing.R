@@ -31,7 +31,6 @@ for(i in resp_files){
   
   test_temp = parse_number(str_split_fixed(i, pattern = "_", n = 5)[4])
   test_date = paste0(str_split_fixed(i, pattern = "_", n = 5)[c(1,2,3)], collapse = "-")
-
   
   file_path <- paste("Raw_data/respiration_data_UTF8/", i, sep = "") # Replace with the actual path to your file
   lines <- readLines(file_path, skipNul = T)
