@@ -34,6 +34,8 @@ trait_data = readr::read_csv(list.files(path = "Raw_data/trait_data/",
          experiment_datetime = as_datetime(experiment_datetime),
          hours_in_lab = as.numeric(experiment_datetime - collection_datetime))
 
+#write.csv(trait_data, "Output/Output_data/trait_data.csv", row.names = F)
+
 tpc_rates = read.csv(file = "Output/Output_data/resp_data.csv")
 
 if(make_report == T){
