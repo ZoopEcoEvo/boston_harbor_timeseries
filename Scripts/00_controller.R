@@ -28,8 +28,9 @@ trait_data = readr::read_csv(list.files(path = "Raw_data/trait_data/",
                                         pattern = "*.csv", 
                                         full.names = TRUE),
                              show_col_types = FALSE) %>% 
+  filter(species != "Thermometer") %>% 
   drop_na(species) %>% 
-  mutate(species = fct_reorder(species, ctmax, median, .desc = T),
+  mutate(species = fct_reorder(.f = species, .x = ctmax, median, .desc = T),
          collection_datetime = as_datetime(collection_datetime),
          experiment_datetime = as_datetime(experiment_datetime),
          hours_in_lab = as.numeric(experiment_datetime - collection_datetime))
