@@ -274,9 +274,9 @@ library(broom)
 
 tpc_params = data.frame()
 pred_data = data.frame()
-species = unique(subset_rates$treatment)
+species_list = unique(subset_rates$treatment)
 
-for(s in species){
+for(s in species_list){
 
 d = subset_rates %>% 
   filter(treatment == s) 
@@ -330,20 +330,32 @@ pred_data = bind_rows(pred_data, preds)
 
 }
 
+resp_ctmax_comp = trait_data %>% 
+  ungroup() %>% 
+  mutate(species = as.character(species)) %>% 
+  filter(species %in% c("Acartia hudsonica", "Pseudocalanus sp.")) %>% 
+  select(species, sex, ctmax) %>% 
+  filter(sex == "f")
+  
+
 # plot data and model fit
 ggplot(subset_rates, aes(temp, rate, colour = treatment)) +
   geom_point(alpha = 0.5) +
   geom_line(data = pred_data, 
             aes(temp, .fitted, colour = species), 
             linewidth = 2) +
+  geom_boxplot(data = resp_ctmax_comp, 
+               aes(x = ctmax, y = 0.1, fill = species), 
+               colour = "black", width = 0.05) + 
   theme_bw(base_size = 12) +
   labs(
     x = 'Temperature (ºC)',
     y = 'Metabolic rate',
     colour = "Species"
-  ) + 
+  )  +
+  guides(fill = "none") + 
   theme_matt() + 
-  theme(legend.position = "right")
+  theme(legend.position = "bottom")
 
 ```
 

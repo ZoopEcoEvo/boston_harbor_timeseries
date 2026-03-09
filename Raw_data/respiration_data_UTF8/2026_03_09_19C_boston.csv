@@ -1,56 +1,56 @@
-﻿sep=																																																																											
-Culture:	en-US																																																																										
-Date pattern short:	M/d/yyyy																																																																										
-Time pattern long:	h:mm:ss tt																																																																										
-Decimal separator:	.																																																																										
-Software version:	1.2.1																																																																										
-																																																																											
-File location:	C:\Users\Matthew_Sasaki\OneDrive - UMass Lowell\Lab Admin\Loligo_resp\Respiration Data\2026_03_09_19C_boston.csv																																																																										
-File creation time:	3/9/2026 3:51:14 PM																																																																										
-SDR name:	SDR-1387																																																																										
-Serial number	SEBX0009001387																																																																										
-MUX channel	ON - 02																																																																										
-																																																																											
-PARAMETERS																																																																											
-Sig LED current	065																																																																										
-Ref LED current	070																																																																										
-Frequency	060																																																																										
-Sending interval	0000																																																																										
-Pulse lenght	06																																																																										
-Red REF comp.	ON																																																																										
-Temperature comp.	ON																																																																										
-																																																																											
-FIRMWARE																																																																											
-ver.4.039.A3.ST	04/30/07, 09:14:36																																																																										
-																																																																											
-SETTINGS																																																																											
-Barometric pressure [hPa]:	1013.25																																																																										
-Is air breather:	False																																																																										
-Salinity [‰]:	32.00																																																																										
-Temperature [°C]:	19.00																																																																										
-Set individual organisms per chamber:	False																																																																										
-Organisms per chamber:	1																																																																										
-Chamber volume [µL]:	500.00																																																																										
-Oxygen unit:	AirSaturation																																																																										
-																																																																											
-TREATMENTS																																																																											
-ID	Name	Color																																																																									
-X	Not set	#000e0ebe																																																																									
-0	Blank	#ff000000																																																																									
-3	Pseudocalanus	#ff5fe8d6																																																																									
-4	Acartia hudsonica	#ff007dea																																																																									
-																																																																											
-CALIBRATION																																																																											
-Wells	A1	A2	A3	A4	A5	A6	B1	B2	B3	B4	B5	B6	C1	C2	C3	C4	C5	C6	D1	D2	D3	D4	D5	D6																																																			
-Phase low [°]:	53.94	53.94	53.94	53.94	53.94	53.94	53.94	53.94	53.94	53.94	53.94	53.94	53.94	53.94	53.94	53.94	53.94	53.94	53.94	53.94	53.94	53.94	53.94	53.94																																																			
-Phase high [°]:	46.67	46.67	46.67	46.67	46.67	46.67	46.67	46.67	46.67	46.67	46.67	46.67	46.67	46.67	46.67	46.67	46.67	46.67	46.67	46.67	46.67	46.67	46.67	46.67																																																			
-Temp. low [°C]:	25.10	25.10	25.10	25.10	25.10	25.10	25.10	25.10	25.10	25.10	25.10	25.10	25.10	25.10	25.10	25.10	25.10	25.10	25.10	25.10	25.10	25.10	25.10	25.10																																																			
-Temp. high [°C]:	25.10	25.10	25.10	25.10	25.10	25.10	25.10	25.10	25.10	25.10	25.10	25.10	25.10	25.10	25.10	25.10	25.10	25.10	25.10	25.10	25.10	25.10	25.10	25.10																																																			
-Treatment ID	3	3	4	3	X	X	0	0	4	0	X	X	3	3	0	4	X	X	0	4	0	4	X	X																																																			
-Normalization factor	1.0000	1.0000	1.0000	1.0000	1.0000	1.0000	1.0000	1.0000	1.0000	1.0000	1.0000	1.0000	1.0000	1.0000	1.0000	1.0000	1.0000	1.0000	1.0000	1.0000	1.0000	1.0000	1.0000	1.0000																																																			
-Organisms	1	1	1	1	1	1	0	0	1	0	1	1	1	1	0	1	1	1	0	1	0	2	1	1																																																			
-																																																																											
-																																																																											
+﻿sep=	
+Culture:	en-US
+Date pattern short:	M/d/yyyy
+Time pattern long:	h:mm:ss tt
+Decimal separator:	.
+Software version:	1.2.1
+
+File location:	C:\Users\Matthew_Sasaki\OneDrive - UMass Lowell\Lab Admin\Loligo_resp\Respiration Data\2026_03_09_19C_boston.csv
+File creation time:	3/9/2026 3:51:14 PM
+SDR name:	SDR-1387
+Serial number	SEBX0009001387
+MUX channel	ON - 02
+
+PARAMETERS
+Sig LED current	065
+Ref LED current	070
+Frequency	060
+Sending interval	0000
+Pulse lenght	06
+Red REF comp.	ON
+Temperature comp.	ON
+
+FIRMWARE
+ver.4.039.A3.ST	04/30/07, 09:14:36
+
+SETTINGS
+Barometric pressure [hPa]:	1013.25
+Is air breather:	False
+Salinity [‰]:	32.00
+Temperature [°C]:	19.00
+Set individual organisms per chamber:	False
+Organisms per chamber:	1
+Chamber volume [µL]:	500.00
+Oxygen unit:	AirSaturation
+
+TREATMENTS
+ID	Name	Color
+X	Not set	#000e0ebe
+0	Blank	#ff000000
+3	Pseudocalanus	#ff5fe8d6
+4	Acartia hudsonica	#ff007dea
+
+CALIBRATION
+Wells	A1	A2	A3	A4	A5	A6	B1	B2	B3	B4	B5	B6	C1	C2	C3	C4	C5	C6	D1	D2	D3	D4	D5	D6
+Phase low [°]:	53.94	53.94	53.94	53.94	53.94	53.94	53.94	53.94	53.94	53.94	53.94	53.94	53.94	53.94	53.94	53.94	53.94	53.94	53.94	53.94	53.94	53.94	53.94	53.94
+Phase high [°]:	46.67	46.67	46.67	46.67	46.67	46.67	46.67	46.67	46.67	46.67	46.67	46.67	46.67	46.67	46.67	46.67	46.67	46.67	46.67	46.67	46.67	46.67	46.67	46.67
+Temp. low [°C]:	25.10	25.10	25.10	25.10	25.10	25.10	25.10	25.10	25.10	25.10	25.10	25.10	25.10	25.10	25.10	25.10	25.10	25.10	25.10	25.10	25.10	25.10	25.10	25.10
+Temp. high [°C]:	25.10	25.10	25.10	25.10	25.10	25.10	25.10	25.10	25.10	25.10	25.10	25.10	25.10	25.10	25.10	25.10	25.10	25.10	25.10	25.10	25.10	25.10	25.10	25.10
+Treatment ID	3	3	4	3	X	X	0	0	4	0	X	X	3	3	0	4	X	X	0	4	0	4	X	X
+Normalization factor	1.0000	1.0000	1.0000	1.0000	1.0000	1.0000	1.0000	1.0000	1.0000	1.0000	1.0000	1.0000	1.0000	1.0000	1.0000	1.0000	1.0000	1.0000	1.0000	1.0000	1.0000	1.0000	1.0000	1.0000
+Organisms	1	1	1	1	1	1	0	0	1	0	1	1	1	1	0	1	1	1	0	1	0	1	1	1
+
+
 Date [DD-MM-YYYY]	Time [hh:mm:ss]	Time stamp	Relative time [hh:mm:ss]	A1 [Phase]	A2 [Phase]	A3 [Phase]	A4 [Phase]	A5 [Phase]	A6 [Phase]	B1 [Phase]	B2 [Phase]	B3 [Phase]	B4 [Phase]	B5 [Phase]	B6 [Phase]	C1 [Phase]	C2 [Phase]	C3 [Phase]	C4 [Phase]	C5 [Phase]	C6 [Phase]	D1 [Phase]	D2 [Phase]	D3 [Phase]	D4 [Phase]	D5 [Phase]	D6 [Phase]	A1 [Amplitude]	A2 [Amplitude]	A3 [Amplitude]	A4 [Amplitude]	A5 [Amplitude]	A6 [Amplitude]	B1 [Amplitude]	B2 [Amplitude]	B3 [Amplitude]	B4 [Amplitude]	B5 [Amplitude]	B6 [Amplitude]	C1 [Amplitude]	C2 [Amplitude]	C3 [Amplitude]	C4 [Amplitude]	C5 [Amplitude]	C6 [Amplitude]	D1 [Amplitude]	D2 [Amplitude]	D3 [Amplitude]	D4 [Amplitude]	D5 [Amplitude]	D6 [Amplitude]	A1 [Oxygen]	A2 [Oxygen]	A3 [Oxygen]	A4 [Oxygen]	A5 [Oxygen]	A6 [Oxygen]	B1 [Oxygen]	B2 [Oxygen]	B3 [Oxygen]	B4 [Oxygen]	B5 [Oxygen]	B6 [Oxygen]	C1 [Oxygen]	C2 [Oxygen]	C3 [Oxygen]	C4 [Oxygen]	C5 [Oxygen]	C6 [Oxygen]	D1 [Oxygen]	D2 [Oxygen]	D3 [Oxygen]	D4 [Oxygen]	D5 [Oxygen]	D6 [Oxygen]
 3/9/2026	3:51:08 PM	134175594680567602	0:00:00	49.48	48.21	47.89	48.21	48.02	48.15	47.93	47.98	48.16	47.93	47.98	47.83	48.09	48.32	47.92	48.20	47.89	47.88	47.95	48.22	47.98	47.99	48.01	47.68	88108	83336	84476	84556	80464	85670	76605	82344	82445	76969	77440	76547	74529	77683	77280	74504	68370	70687	70599	66612	71497	65498	67785	64785	72.2	92.4	97.7	92.4	95.5	93.4	97.0	96.2	93.2	97.0	96.2	98.7	94.4	90.6	97.2	92.6	97.7	97.9	96.7	92.3	96.2	96.0	95.7	101.2
 3/9/2026	3:51:38 PM	134175594980582619	0:00:30	49.48	48.21	47.92	48.22	48.02	48.14	47.94	47.99	48.16	47.93	47.98	47.83	48.09	48.33	47.92	48.21	47.90	47.88	47.95	48.22	47.99	48.00	48.01	47.67	88126	83416	84591	84628	80433	85696	76602	82186	82406	77043	77366	76555	74580	77552	77332	74518	68485	70639	70732	66795	71585	65542	67871	64766	72.2	92.4	97.2	92.3	95.5	93.6	96.9	96.0	93.2	97.0	96.2	98.7	94.4	90.5	97.2	92.4	97.5	97.9	96.7	92.3	96.0	95.9	95.7	101.4
