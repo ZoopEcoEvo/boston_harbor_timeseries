@@ -44,6 +44,7 @@ for(i in resp_files){
                              skip = treatment_line, 
                              nrows = calib_line - treatment_line - 2) %>% 
     select("treatment_id" = ID, "treatment" = Name) %>% 
+    filter(treatment_id != "CALIBRATION") %>% 
     mutate(treatment_id = if_else(treatment_id == "X", NA, treatment_id), 
            treatment_id = as.numeric(treatment_id)) %>% 
     filter(treatment != "")
