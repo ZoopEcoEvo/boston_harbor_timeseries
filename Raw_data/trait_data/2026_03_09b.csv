@@ -1,0 +1,13 @@
+data_sheet,collection_datetime,experiment_datetime,collection_temp,collection_salinity,collection_ph,lab_temp,ramp_start_temp,water_bath,thermometer,tube,species,sex,ctmax,size,fecundity
+12,2026-03-09 11:30:00,2026-03-09 21:00:00,3.8,30.2,8.27,3,3,1,5,1,Calanus finmarchicus,f,20.6,NA,NA
+12,2026-03-09 11:30:00,2026-03-09 21:00:00,3.8,30.2,8.27,3,3,1,5,2,Pseudocalanus sp.,f,21.4,NA,11
+12,2026-03-09 11:30:00,2026-03-09 21:00:00,3.8,30.2,8.27,3,3,1,5,3,Pseudocalanus sp.,f,22.1,NA,11
+12,2026-03-09 11:30:00,2026-03-09 21:00:00,3.8,30.2,8.27,3,3,1,5,4,Centropages typicus,f,24,NA,NA
+12,2026-03-09 11:30:00,2026-03-09 21:00:00,3.8,30.2,8.27,3,3,1,5,5,Calanus finmarchicus,f,22.4,NA,NA
+12,2026-03-09 11:30:00,2026-03-09 21:00:00,3.8,30.2,8.27,3,3,1,5,6,Thermometer,NA,NA,NA,NA
+12,2026-03-09 11:30:00,2026-03-09 21:00:00,3.8,30.2,8.27,3,3,1,5,7,Calanus finmarchicus,f,23.1,NA,NA
+12,2026-03-09 11:30:00,2026-03-09 21:00:00,3.8,30.2,8.27,3,3,1,5,8,Tortanus discaudatus,f,24.3,NA,NA
+12,2026-03-09 11:30:00,2026-03-09 21:00:00,3.8,30.2,8.27,3,3,1,5,9,Temora longicornis,f,25.1,NA,NA
+12,2026-03-09 11:30:00,2026-03-09 21:00:00,3.8,30.2,8.27,3,3,1,5,10,Acartia hudsonica,f,23.8,NA,NA
+12,2026-03-09 11:30:00,2026-03-09 21:00:00,3.8,30.2,8.27,3,3,1,5,11,Temora longicornis,f,24.9,NA,NA
+12,2026-03-09 11:30:00,2026-03-09 21:00:00,3.8,30.2,8.27,3,3,1,5,12,Centropages typicus,f,24.8,NA,NA

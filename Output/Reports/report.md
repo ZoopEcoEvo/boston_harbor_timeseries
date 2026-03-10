@@ -1,6 +1,6 @@
 SCoPE: Seasonality in Copepod Physiology and Ecology
 ================
-2026-02-18
+2026-03-10
 
 - [Boston Harbor Seasonality](#boston-harbor-seasonality)
 - [CTmax Data](#ctmax-data)
@@ -198,7 +198,7 @@ subset_rates = tpc_rates %>%
   mutate(rate = if_else(rate < 0, 0, rate))
 
 tpc_rates %>%
-  filter(rsq >0.7 & rate < 0.09) %>%
+  filter(rsq >0.7) %>%
   mutate(rate = if_else(rate < 0, 0, rate)) %>%
   group_by(treatment, temp) %>%  
   summarise(rate = mean(rate)) %>% 
@@ -213,3 +213,96 @@ tpc_rates %>%
 ```
 
 <img src="../Figures/markdown/unnamed-chunk-12-1.png" style="display: block; margin: auto;" />
+
+``` r
+library(rTPC)
+library(nls.multstart)
+library(broom)
+
+tpc_params = data.frame()
+pred_data = data.frame()
+species_list = unique(subset_rates$treatment)
+
+for(s in species_list){
+
+d = subset_rates %>% 
+  filter(treatment == s) 
+
+# choose model
+mod = 'sharpschoolhigh_1981'
+
+# get start vals
+start_vals <- get_start_vals(
+  d$temp,
+  d$rate,
+  model_name = 'sharpeschoolhigh_1981'
+)
+
+# get limits
+low_lims <- get_lower_lims(d$temp, d$rate, model_name = 'sharpeschoolhigh_1981')
+
+upper_lims <- get_upper_lims(
+  d$temp,
+  d$rate,
+  model_name = 'sharpeschoolhigh_1981'
+)
+
+# fit model
+fit <- nls_multstart(
+  rate ~ sharpeschoolhigh_1981(temp = temp, r_tref, e, eh, th, tref = 15),
+  data = d,
+  iter = 500,
+  start_lower = start_vals - 10,
+  start_upper = start_vals + 10,
+  lower = low_lims,
+  upper = upper_lims,
+  supp_errors = 'Y',
+  lhstype = 'random'
+)
+
+# calculate additional traits
+sp_params = calc_params(fit) %>%
+  # round for easy viewing
+  mutate_all(round, 2) %>% 
+  mutate(species = s)
+
+tpc_params = bind_rows(tpc_params, sp_params)
+
+# predict new data
+new_data <- data.frame(temp = seq(min(subset_rates$temp), max(subset_rates$temp) + 5, 0.25))
+preds <- augment(fit, newdata = new_data) %>% 
+  mutate(species = s)
+
+pred_data = bind_rows(pred_data, preds)
+
+}
+
+resp_ctmax_comp = trait_data %>% 
+  ungroup() %>% 
+  mutate(species = as.character(species)) %>% 
+  filter(species %in% c("Acartia hudsonica", "Pseudocalanus sp.")) %>% 
+  select(species, sex, ctmax) %>% 
+  filter(sex == "f")
+  
+
+# plot data and model fit
+ggplot(subset_rates, aes(temp, rate, colour = treatment)) +
+  geom_point(alpha = 0.5) +
+  geom_line(data = pred_data, 
+            aes(temp, .fitted, colour = species), 
+            linewidth = 2) +
+  geom_boxplot(data = resp_ctmax_comp, 
+               aes(x = ctmax, y = 0.1, fill = species), 
+               colour = "black", width = 0.05) + 
+  theme_bw(base_size = 12) +
+  labs(
+    x = 'Temperature (ºC)',
+    y = 'Metabolic rate',
+    colour = "Species"
+  )  +
+  guides(fill = "none") + 
+  theme_matt() + 
+  theme(legend.position = "bottom")
+```
+
+<img src="../Figures/markdown/tpc-fits-1.png" style="display: block; margin: auto;" />

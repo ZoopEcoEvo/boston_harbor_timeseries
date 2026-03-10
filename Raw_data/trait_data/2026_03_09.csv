@@ -1,0 +1,13 @@
+data_sheet,collection_datetime,experiment_datetime,collection_temp,collection_salinity,collection_ph,lab_temp,ramp_start_temp,water_bath,thermometer,tube,species,sex,ctmax,size,fecundity
+11,2026-03-09 11:30:00,2026-03-09 14:00:00,3.8,30.2,8.27,3,3,1,5,1,Thermometer,NA,NA,NA,NA
+11,2026-03-09 11:30:00,2026-03-09 14:00:00,3.8,30.2,8.27,3,3,1,5,2,Eurytemora herdmani,f,22.2,NA,190
+11,2026-03-09 11:30:00,2026-03-09 14:00:00,3.8,30.2,8.27,3,3,1,5,3,Calanus finmarchicus,f,23.8,NA,NA
+11,2026-03-09 11:30:00,2026-03-09 14:00:00,3.8,30.2,8.27,3,3,1,5,4,Eurytemora herdmani,f,17.8,NA,154
+11,2026-03-09 11:30:00,2026-03-09 14:00:00,3.8,30.2,8.27,3,3,1,5,5,Calanus finmarchicus,j,22.4,NA,NA
+11,2026-03-09 11:30:00,2026-03-09 14:00:00,3.8,30.2,8.27,3,3,1,5,6,Tortanus discaudatus,f,24.8,NA,NA
+11,2026-03-09 11:30:00,2026-03-09 14:00:00,3.8,30.2,8.27,3,3,1,5,7,Tortanus discaudatus,m,24.8,NA,NA
+11,2026-03-09 11:30:00,2026-03-09 14:00:00,3.8,30.2,8.27,3,3,1,5,8,Pseudocalanus sp.,f,21.8,NA,2
+11,2026-03-09 11:30:00,2026-03-09 14:00:00,3.8,30.2,8.27,3,3,1,5,9,Calanus finmarchicus,f,22.6,NA,NA
+11,2026-03-09 11:30:00,2026-03-09 14:00:00,3.8,30.2,8.27,3,3,1,5,10,Pseudocalanus sp.,f,22.7,NA,5
+11,2026-03-09 11:30:00,2026-03-09 14:00:00,3.8,30.2,8.27,3,3,1,5,11,Pseudocalanus sp.,f,22.3,NA,6
+11,2026-03-09 11:30:00,2026-03-09 14:00:00,3.8,30.2,8.27,3,3,1,5,12,Acartia hudsonica,f,24.1,NA,NA
