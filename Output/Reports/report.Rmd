@@ -249,11 +249,13 @@ When estimating TPCs, we will use just rate estimates with an R^2 of greater tha
 
 ```{r}
 subset_rates = tpc_rates %>%
-  filter(rsq >0.7) %>%
-  mutate(rate = if_else(rate < 0, 0, rate))
+  mutate(month = month(date)) %>% 
+  mutate(rate = if_else(rate < 0, 0, rate)) %>% 
+  filter(rsq >0.7 | rate < 0.025) %>% 
+  filter(temp < 23)
 
 tpc_rates %>%
-  filter(rsq >0.7) %>%
+  #filter(rsq >0.7) %>%
   mutate(rate = if_else(rate < 0, 0, rate)) %>%
   group_by(treatment, temp) %>%  
   summarise(rate = mean(rate)) %>% 
